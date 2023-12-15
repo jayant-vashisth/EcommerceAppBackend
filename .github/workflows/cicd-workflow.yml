@@ -16,7 +16,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t jayantvashisth/furniturebackend --build-arg MONGODB_URI=${{ secrets.MONGODB_URI }} --build-arg PORT=${{ secrets.PORT }} .
+        run: docker build -t jayantvashisth/furniturebackend --build-arg MONGODB_URI=${{ secrets.MONGODB_URI }} .
 
       - name: Push image to Docker Hub
         run: docker push jayantvashisth/furniturebackend:latest
@@ -30,9 +30,8 @@ jobs:
         run: docker pull jayantvashisth/furniturebackend
 
       - name: Delete old container (if exists)
-        run: docker rm -f furniture-container || true
+        run: docker rm -f furniture-container
 
       - name: Run Docker container
-        run: docker run -d -p 5000:5000 --env MONGODB_URI=${{ secrets.MONGODB_URI }} --env PORT=${{ secrets.PORT }} --name furniture-container jayantvashisth/furniturebackend
+        run: docker run -d -p 5000:5000 --env MONGODB_URI=${{ secrets.MONGODB_URI }} --name furniture-container jayantvashisth/furniturebackend
 
-      # Add more steps for additional deployment tasks (e.g., database migrations, environment setup) if needed
