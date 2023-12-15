@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const productRouter = require("./routes/Products");
 
-const port = 3000;
+const port = 5000;
 
 dotenv.config();
 mongoose
