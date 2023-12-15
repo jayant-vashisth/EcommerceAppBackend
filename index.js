@@ -21,7 +21,7 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 
 app.use("/api/products", productRouter);
 
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send("Hey there!, testing my cicd pipeline"));
 app.listen(process.env.PORT || port, () =>
   console.log(`Example app listening on port ${port}!`)
 );
