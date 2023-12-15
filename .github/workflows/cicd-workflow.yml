@@ -27,4 +27,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f furniture-container
       - name: Run docker container
-        run: docker run -d -p 5000:5000 -name furniture-container jayantvashisth/furniturebackend
+        run: docker run -d -p 5000:5000 --name furniture-container jayantvashisth/furniturebackend
