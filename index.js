@@ -8,7 +8,7 @@ const port = 5000;
 
 dotenv.config();
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.DATABASE_HOST)
   .then(() => {
     console.log("db connected");
   })
