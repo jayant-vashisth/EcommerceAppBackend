@@ -5,12 +5,7 @@ const mongoose = require("mongoose");
 const productRouter = require("./routes/Products");
 
 const port = 5000;
-console.log(
-  "secret",
-  process.env.DATABASE_HOST,
-  " or ",
-  process.env.MONGODB_URI
-);
+
 dotenv.config();
 mongoose
   .connect(process.env.DATABASE_HOST)
@@ -28,5 +23,12 @@ app.use("/api/products", productRouter);
 
 app.get("/", (req, res) => res.send("Hey there!, testing my cicd pipeline"));
 app.listen(process.env.PORT || port, () =>
-  console.log(`Example app listening on port ${port}!`)
+  console.log(`Example app listening on port ${port}!`),
+
+  console.log(
+    "secret",
+    process.env.DATABASE_HOST,
+    " or ",
+    process.env.MONGODB_URI
+  )
 );
