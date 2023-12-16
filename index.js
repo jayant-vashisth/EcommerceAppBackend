@@ -23,12 +23,5 @@ app.use("/api/products", productRouter);
 
 app.get("/", (req, res) => res.send("Hey there!, testing my cicd pipeline"));
 app.listen(process.env.PORT || port, () =>
-  console.log(`Example app listening on port ${port}!`),
-
-  console.log(
-    "secret",
-    process.env.DATABASE_HOST,
-    " or ",
-    process.env.MONGODB_URI
-  )
+  console.log(`Example app listening on port ${port}! and pipeline is working perfectly`)
 );
