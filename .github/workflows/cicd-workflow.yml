@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Pull image from Docker Hub
-        run: docker pull jayantvashisth/furniturebackend
+        run: docker pull jayantvashisth/furniturebackend:latest
 
       - name: Delete old container (if exists)
         run: docker rm -f furniture-container
