@@ -5,7 +5,12 @@ const mongoose = require("mongoose");
 const productRouter = require("./routes/Products");
 
 const port = 5000;
-
+console.log(
+  "secret",
+  process.env.DATABASE_HOST,
+  " or ",
+  process.env.MONGODB_URI
+);
 dotenv.config();
 mongoose
   .connect(process.env.DATABASE_HOST)
